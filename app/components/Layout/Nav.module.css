@@ -1,0 +1,17 @@
+.Nav {
+  margin:auto;
+  max-width:1200px;
+  height:50px;
+  background:var(--skyblue);
+  margin-top:15px;
+  font-size:25px;
+  text-align:center;
+}
+.Nav ul {
+  display:flex;
+}
+.Nav li {
+  list-style:none;
+  flex:1;
+  line-height:50px;
+}

@@ -1,0 +1,25 @@
+:root {
+  --gray:#D9D9D9;
+  --light_g:#EFEFEF;
+  --title_g:#F2F2F2;
+  --button_g:#eee;
+  --skyblue:#EEF7FF;
+}
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+a {
+  text-decoration:none;
+  color:inherit;
+}
+input:focus {
+  outline:none;
+}
+select:focus {
+  outline:none;
+}
+.quill {    /* text editor의 css 변경 */
+  height:400px ;
+}

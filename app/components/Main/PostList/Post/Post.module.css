@@ -1,0 +1,30 @@
+.Post {
+  display:flex;
+  padding:15px 10px;
+  border-bottom:0.5px solid var(--light_g) ;
+  cursor: pointer;
+}
+.thumbnail {
+  padding:10px 8px;
+  background:var(--gray );  
+  border-radius:5px;
+  margin-right:10px;
+}
+.title {
+  display:flex;
+  align-items:top;
+}
+.category {
+  background:var(--light_g);
+  padding:3px 8px;
+  font-size:14px;
+  border-radius:5px;
+  margin-right:7px;
+}
+.detail {
+  display:flex;
+  padding:0 5px;
+}
+.detail div {
+  margin-right:12px;
+}

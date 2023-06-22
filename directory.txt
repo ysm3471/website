@@ -1,0 +1,66 @@
+home
+-login
+-header
+ -title
+ -nav
+-main
+ -banner
+ -postlist
+  -posttitle
+  -list
+   -notice
+   -post
+-footer(시간 남으면)
+
+각 게시물
+-login
+-smallheader
+ -smalltitle
+ -nav
+-main
+ -postlist
+  -posttitle
+  -list
+   -notice
+   -post
+  -pagination
+ -write
+ -index
+-footer(시간 남으면)
+
+각 게시물 new
+-login
+-smallheader
+ -smalltitle
+ -nav
+-main
+ -newtitle
+ -sel
+  -selpage
+  -selcategory
+ -writetitle
+  -titlename
+  -titlealbum
+ -writebox
+ -writetag
+ -submitBtn
+-footer(시간 남으면)
+
+각 게시물 상세
+-login
+-smallheader
+ -smalltitle
+ -nav
+-main
+ -postheader
+  -postingpage
+  -posttitle
+  -posterdetail
+ -postdetail
+ -recommendbtn
+ -commentwrap
+  -commnet
+  -commentbox
+   -content
+   -commnetbtn
+-footer(시간 남으면)

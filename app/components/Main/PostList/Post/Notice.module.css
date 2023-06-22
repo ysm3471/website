@@ -1,0 +1,14 @@
+.Notice {
+  background:var(--title_g);
+  display:flex;
+  justify-content:left;
+  align-items:center;
+  padding:10px 15px;
+  cursor: pointer;
+}
+.Notice div {
+  padding:3px;
+  background:var(--gray );
+  border-radius:5px;
+  margin-right:10px;
+}

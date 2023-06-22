@@ -1,0 +1,18 @@
+.PostingBtn {
+  width:90px;
+  height:38px;
+  background:var(--button_g);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:20px;
+  margin-left:auto;
+  cursor: pointer;
+}
+.PostingBtn a {
+  display:block;
+  width:100%;
+  line-height:38px;
+  text-align:center;
+}

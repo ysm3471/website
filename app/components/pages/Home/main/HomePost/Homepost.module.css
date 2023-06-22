@@ -1,0 +1,10 @@
+.PostList {
+  margin:auto;
+  max-width:1180px;
+}
+.more {
+  display:flex;
+  justify-content:right;
+  margin:10px 0;
+  cursor: pointer;
+}

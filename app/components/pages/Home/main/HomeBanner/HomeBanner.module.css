@@ -1,0 +1,17 @@
+.HomeBanner {
+  max-width:1200px;
+  margin:auto;
+  margin-bottom:40px;
+}
+.HomeBanner h2 {
+  font-weight:400;
+  margin-bottom:10px;
+  cursor:default;
+}
+.HomeBanner iframe {
+  border-radius:15px;
+}
+.videoWrap {
+  display:flex;
+  justify-content:space-between;
+}
