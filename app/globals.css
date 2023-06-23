@@ -23,3 +23,6 @@ select:focus {
 .quill {    /* text editor의 css 변경 */
   height:400px ;
 }
+iframe {
+  border:none;
+}

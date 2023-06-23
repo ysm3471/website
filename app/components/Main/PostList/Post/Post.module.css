@@ -5,14 +5,21 @@
   cursor: pointer;
 }
 .thumbnail {
-  padding:10px 8px;
-  background:var(--gray );  
-  border-radius:5px;
+  width:90px;
+  max-height:57px;
   margin-right:10px;
+  border-radius:10px;
+}
+.thumbnail img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:10px;
 }
 .title {
   display:flex;
   align-items:top;
+  margin-bottom:8px;
 }
 .category {
   background:var(--light_g);
