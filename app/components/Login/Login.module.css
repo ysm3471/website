@@ -1,8 +1,9 @@
 .Login {
   display:flex;
   justify-content:right;
+  margin:10px 20px 0 0 ;
 }
 .Login div {
-  margin-right:15px;
+  margin-left:15px;
   cursor: pointer;
 }

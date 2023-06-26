@@ -4,13 +4,13 @@ import Nav from '../../Layout/Nav';
 import ForumPost from './ForumPost/ForumPost';
 import SmallHeader from '../../Layout/SmallHeader/SmallHeader';
 
-export default function Forum({title,page}) {
+export default function Forum({title,page,searchParams}) {
   return (
     <div className={classes.container}>
       <SmallHeader/>
       <Nav/>
       <main>
-        <ForumPost title={title} page={page}/> 
+        <ForumPost title={title} page={page} searchParams={searchParams}/> 
       </main>
     </div>
   )

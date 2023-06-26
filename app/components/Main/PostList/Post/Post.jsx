@@ -4,9 +4,32 @@ import React from 'react';
 import classes from './Post.module.css';
 import { useRouter } from 'next/navigation'
 
-export default function Post({page,tag2,title,id,thumbnail}) {
+export default function Post({page,tag2,title,id,thumbnail,time,userName}) {
   const router = useRouter();
+  const today = new Date();
+  const now = today.getTime();
+  const timestamp = (now-time)/1000;
+  let when;
   let thumbnailUrl;
+
+  switch(true) {
+    case (timestamp<60) :
+      when = '1분전';
+      break;
+    case (timestamp<3600) :
+      when = Math.floor(timestamp/60) + '분전'
+      break;
+    case (timestamp<86400) :
+      when = Math.floor(timestamp/3600) + '시간전'
+      break;
+    default:
+      const date = new Date(time);
+      const month = date.getMonth() + 1;
+      const day = date.getDay();
+
+      when = month + "/" + day;
+  }
+
 
   if(thumbnail) {
     thumbnailUrl = thumbnail.replace("https://youtu.be/","https://img.youtube.com/vi/");    // 유튜브 링크를 이용해 썸네일으로 변환
@@ -27,8 +50,8 @@ export default function Post({page,tag2,title,id,thumbnail}) {
             <p>{title}</p>
           </div>
           <div className={classes.detail}>
-            <div className={classes.writer}>글쓴이</div>
-            <div className={classes.date}>06/21</div>
+            <div className={classes.writer}>{userName}</div>
+            <div className={classes.date}>{when}</div>
             <div className={classes.view}>조회수</div>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function HomePost() {
 
   let postingList;
 
-  get(child(dbRef, `user-posts/1234`))
+  get(child(dbRef, `user-posts/post`))
     .then((snapshot) => {
       if (snapshot.exists()) {
         postingData.current = snapshot.val();
@@ -29,9 +29,12 @@ export default function HomePost() {
     });
 
   if (on) {
-    postingList = Object.keys(postingData.current).slice(0).reverse().map((key, index) => {   // 최신 게시물부터 보여주기 위해서 역순으로 배열 생성
-      const postingContent = postingData.current[key]
-      return <Post key={key} tag2={postingContent.tag2} title={postingContent.title} page={postingContent.tag1} id={key} thumbnail={postingContent.thumbnail}  />
+    postingList = Object.keys(postingData.current).reverse().map((key, index) => {   // 최신 게시물부터 보여주기 위해서 역순으로 배열 생성
+      if(index < 7) {
+        const postingContent = postingData.current[key]
+        return <Post key={key} tag2={postingContent.tag2} title={postingContent.title} page={postingContent.tag1} id={key} thumbnail={postingContent.thumbnail} time={postingContent.time} userName={postingContent.username} />        
+      }
+      else return;
     })
   }
   return (

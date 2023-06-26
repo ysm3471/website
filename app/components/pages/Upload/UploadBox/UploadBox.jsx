@@ -1,12 +1,17 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './UploadBox.module.css'
 import TextEditor from './TextEditor';
 import writeUserData from '@/Firebase/Write/writeUserData';
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 export default function UploadBox({ forum }) {
-  const [tag1,setTag1] = useState('korea');
+  const { data: session, status } = useSession();
+
+  console.log(forum);
+
+  const [tag1,setTag1] = useState(forum);
   const [tag2,setTag2] = useState('music');
   const [title,setTitle] = useState('');
   const [album,setAlbum] = useState('');
@@ -15,11 +20,23 @@ export default function UploadBox({ forum }) {
   const [thumbnail,setThumbnail] = useState('');
 
   const router = useRouter();
+  
+  useEffect(() => {   // 글쓰기 도중 로그아웃이 될 경우
+    if(status !== "authenticated") {
+      alert("로그인 후에 글을 작성할 수 있습니다");
+      router.back();
+    }
+  },[])
+
+  const userName = session.user.email.split('@')
 
   function handleSubmit(e) {
     e.preventDefault();
+    const today = new Date();
+    const time = today.getTime();   // 시간정보를 초단위로 저장
+
     if(title && value) {
-      writeUserData('1234','gildong',tag1,tag2,title,album,value,tag,thumbnail)
+      writeUserData(userName[0],tag1,tag2,title,album,value,tag,thumbnail,time)
       router.back();      
     }
     else {

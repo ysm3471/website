@@ -17,7 +17,7 @@ export default function Forum({ params, searcParams }) {
   const [on,setOn] = useState(false);
   const postingData = useRef();
 
-  get(child(dbRef, `user-posts/1234/${params.slug}`))
+  get(child(dbRef, `user-posts/post/${params.slug}`))
   .then((snapshot) => {
     if (snapshot.exists()) {
       postingData.current = snapshot.val();
