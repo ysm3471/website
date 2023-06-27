@@ -9,8 +9,6 @@ import { useSession } from 'next-auth/react';
 export default function UploadBox({ forum }) {
   const { data: session, status } = useSession();
 
-  console.log(forum);
-
   const [tag1,setTag1] = useState(forum);
   const [tag2,setTag2] = useState('music');
   const [title,setTitle] = useState('');

@@ -1,3 +1,11 @@
 .Pagination {
   text-align:center;
 }
+.Pagination button {
+  padding:8px 10px;
+  background:var(--button_g);
+  border:none;
+  margin-right:15px;
+  border-radius:5px;
+  cursor: pointer;
+}

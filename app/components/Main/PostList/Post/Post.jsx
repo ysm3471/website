@@ -25,7 +25,7 @@ export default function Post({page,tag2,title,id,thumbnail,time,userName}) {
     default:
       const date = new Date(time);
       const month = date.getMonth() + 1;
-      const day = date.getDay();
+      const day = date.getDate();
 
       when = month + "/" + day;
   }
