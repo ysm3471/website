@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "netlify-deploy": "next build && next export"
   },
   "dependencies": {
     "firebase": "^9.23.0",
@@ -20,5 +21,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-quill": "^2.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

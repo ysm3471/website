@@ -1,29 +1,27 @@
-import {app} from '../FIrebaseClient';
-import {getDatabase,ref,set,child,push,update} from 'firebase/database'
+import { app } from '../FIrebaseClient';
+import { getDatabase, ref, child, push, update } from 'firebase/database'
 
-export default function writeUserData(name,tag1,tag2, title,album, content,tag,thumbnail,time) {
+export default function writeUserData(name, tag1, tag2, title, album, content, tag, thumbnail, time) {
   const db = getDatabase(app);
 
-    // A post entry.
-    const postData = {
-      username: name,
-      tag1,
-      tag2,
-      title,
-      album,
-      content,
-      tag,
-      thumbnail,
-      time,
-    };
+  const postData = {
+    username: name,
+    tag1,
+    tag2,
+    title,
+    album,
+    content,
+    tag,
+    thumbnail,
+    time,
+    viewcnt:0
+  };
 
-    // Get a key for a new Post.
-    const newPostKey = push(child(ref(db), 'posts')).key;
+  const newPostKey = push(child(ref(db), '/user-posts/post/')).key; // post에 key를 부여하면서 생성 후 키를 받음
 
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    const updates = {};
-    updates['/posts/' + newPostKey] = postData;
-    updates['/user-posts/' + 'post/' + newPostKey] = postData;
-  
-    return update(ref(db), updates);
+
+  const updates = {};
+  updates['/user-posts/post/' + newPostKey] = postData;    // 인자로 받은 postData를 배열형태로 저장함
+
+  return update(ref(db), updates);  // 만든 배열을 새로 만든 post에 업데이트함
 }

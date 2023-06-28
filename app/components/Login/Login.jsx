@@ -4,19 +4,19 @@ import React from 'react';
 import classes from './Login.module.css'
 
 export default function Login() {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   return (
     <div className={classes.Login}>
     {session?.user ? (
       <>
-        <p className="text-sky-600"> {session.user.email}</p>
-        <div onClick={() => signOut()}>
+        <p> {session.user.email}</p>
+        <div onClick={() => signOut('naver')}>
           Sign Out
         </div>
       </>
     ) : (
-      <div onClick={() => signIn()}>
+      <div onClick={() => signIn('naver')}>
         Sign In
       </div>
     )}

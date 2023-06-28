@@ -1,5 +1,5 @@
 import Login from './components/Login/Login';
-import AuthSession from './AuthSession';
+import AuthSession from './AuthSession'; 
 import './globals.css';
 import { Inter } from 'next/font/google';
 

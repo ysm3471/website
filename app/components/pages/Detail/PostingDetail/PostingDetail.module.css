@@ -6,9 +6,26 @@
 .PostingDetail > div {
   margin-bottom:5px;
 }
+.category {
+  font-size:14px;
+  margin-bottom:3px;
+}
+.title {
+  font-weight:600;
+  font-size:20px;
+  margin-bottom:5px;
+}
 .detail {
   display:flex;
+  font-size:14px;
+  color:rgb(145, 145, 145)
 }
 .detail > div {
   margin-right:10px;
+}
+
+.delete {
+  text-align:right;
+  cursor: pointer;
+  font-size:14px;
 }

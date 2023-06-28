@@ -6,19 +6,17 @@ import { usePathname, useRouter} from 'next/navigation';
 
 export default function Search() {
   const [value,setValue] = useState("");
-  const [category,setCategory] = useState("title")
+  const [category,setCategory] = useState("title");
   const router = useRouter();
   const pathName = usePathname();
 
-  function Change(e) {
+  function Change(e) {    // 검색 내용을 저장하는 함수
     setValue(e.target.value);
   }
-  function Change2(e) {
+  function Change2(e) {   // 검색 카테고리를 저장하는 함수
     setCategory(e.target.value)
-    console.log(category);
   }
-
-  function onSearch() {
+  function onSearch() {   // 검색하면 현재 페이지에서 쿼리를 추가함
     router.push(`${pathName}?category=${category}&search=${value}`);
   }
 
