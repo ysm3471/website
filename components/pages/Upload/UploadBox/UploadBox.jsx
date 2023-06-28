@@ -6,10 +6,10 @@ import writeUserData from '@/Firebase/Write/writeUserData';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 
-export default function UploadBox({ forum }) {
+export default function UploadBox() {
   const { data: session, status } = useSession();
 
-  const [tag1,setTag1] = useState(forum);
+  const [tag1,setTag1] = useState('korea');
   const [tag2,setTag2] = useState('music');
   const [title,setTitle] = useState('');
   const [album,setAlbum] = useState('');
@@ -44,7 +44,7 @@ export default function UploadBox({ forum }) {
 return (
   <form onSubmit={handleSubmit} className={classes.UploadBox}>
     <div className={classes.category}>
-      <select className={classes.forum} defaultValue={forum} onChange={(e)=>setTag1(e.target.value)}>
+      <select className={classes.forum} defaultValue={'korea'} onChange={(e)=>setTag1(e.target.value)}>
         <option value="korea">국내/K-POP</option>
         <option value="pop">팝송</option>
         <option value="asia">아시아</option>

@@ -55,7 +55,7 @@ export default function Forum({ params }) {
 
   return (
     <>
-      {on && <div className={classes.container}>
+      {on ? <div className={classes.container}>
         <SmallHeader />
         <Nav />
         <main>
@@ -67,7 +67,7 @@ export default function Forum({ params }) {
             <Postingcomment />
           </div>
         </main>
-      </div> }   
+      </div> : null }   
     </>
 
   )

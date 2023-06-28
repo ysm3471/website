@@ -1,12 +1,12 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
 import classes from './Homepost.module.css'
-import PostListTitle from '@/app/components/Main/PostList/PostListTitle';
-import Notice from '@/app/components/Main/PostList/Post/Notice';
-import Post from '@/app/components/Main/PostList/Post/Post';
 import Link from 'next/link';
 import { getDatabase, ref, query, limitToLast, onValue } from 'firebase/database'
 import { app } from '@/Firebase/FIrebaseClient';
+import Post from '@/components/Main/PostList/Post/Post';
+import PostListTitle from '@/components/Main/PostList/PostListTitle';
+import Notice from '@/components/Main/PostList/Post/Notice';
 
 
 export default function HomePost() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './HomeHeader.module.css'
-import Nav from '@/app/components/Layout/Nav';
+import Nav from '../Nav';
 
 export default function HomeHeader() {
   return (

@@ -1,9 +1,9 @@
 import React from 'react'
-import SmallHeader from '../components/Layout/SmallHeader/SmallHeader'
-import Nav from '../components/Layout/Nav'
-import PostingDetail from '../components/pages/Detail/PostingDetail/PostingDetail'
-import PostingContent from '../components/pages/Detail/PostingContent/PostingContent'
-import Postingcomment from '../components/pages/Detail/Postingcomment/Postingcomment';
+import SmallHeader from '@/components/Layout/SmallHeader/SmallHeader'
+import Nav from '@/components/Layout/Nav'
+import PostingDetail from '@/components/pages/Detail/PostingDetail/PostingDetail'
+import PostingContent from '@/components/pages/Detail/PostingContent/PostingContent'
+import Postingcomment from '@/components/pages/Detail/Postingcomment/Postingcomment';
 import classes from './page.module.css'
 
 export default function page() {

@@ -1,10 +1,10 @@
+import Forum from '@/components/pages/Forum/Forum'
 import React from 'react'
-import Forum from '../components/pages/Forum/Forum'
 
-export default function page({ params, searchParams }) {
+export default function page() {
   return (
     <>
-    <Forum title="전체" page="all" searchParams={searchParams}/>
+    <Forum title="전체" page="all"/>
     </>
   )
 }

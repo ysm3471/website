@@ -1,9 +1,9 @@
 import React from 'react'
-import Detail from '../../components/pages/Detail/Detail'
+import Detail from '@/components/pages/Detail/Detail'
 
-export default function page({ params, searchParams }) {
+export default function page({ params}) {
 
   return (
-    <Detail params={params} searchParams={searchParams}/>
+    <Detail params={params} />
   )
 }
