@@ -4,10 +4,11 @@ import NaverProvider from "next-auth/providers/naver";
 export const authOptions = NextAuth({
   providers: [
     NaverProvider({
-      clientId: "hsyLUk628d9fW_PmYpoO",
-      clientSecret: "8l0vBTqs3z"
+      clientId: process.env.NAVER_LOGIN_API_KEY,
+      clientSecret: process.env.NAVER_LOGIN_API_SECRET
     })
   ],
+  secret:"pzDMh+t0dg0nGnJtP1P+hZbFJu64tBO1nVOI4+G+NzQ=",
   callbacks: {  
     async jwt({ token, account }) {
       if (account) {
