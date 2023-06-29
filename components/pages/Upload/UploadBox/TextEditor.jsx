@@ -1,10 +1,10 @@
 "use client" // next js에서 client 컴포넌트임을 명시
 
 import React, { useEffect, useRef } from 'react';
-
 import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css'
 
-const QuillNoSSRWrapper = dynamic(import('react-quill'), {
+const QuillNoSSRWrapper = dynamic(() => import('react-quill'), {    // 클라이언트 측에서 동적으로 모듈을 로딩하게 하는 방법. 안하면 오류남
   ssr: false,
   loading: () => <p>Loading ...</p>,
 })
@@ -22,11 +22,7 @@ const modules = {
     ],
     ['link', 'image', 'video'],
     ['clean'],
-  ],
-  clipboard: {
-    // toggle to add extra line breaks when pasting HTML:
-    matchVisual: false,
-  },
+  ]
 }
 
 export default function TextEditor({ value, setValue, setThumbnail }) {
@@ -65,9 +61,7 @@ export default function TextEditor({ value, setValue, setThumbnail }) {
   }, [text.current])
 
   return (
-    <div>
       <QuillNoSSRWrapper modules={modules} value={value} onChange={setValue} theme="snow" />
-    </div>
   )
 
 }

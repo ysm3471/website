@@ -1,6 +1,8 @@
 import NextAuth from "next-auth"
 import NaverProvider from "next-auth/providers/naver";
-
+//  배포시에는 웹에 key변수를 입력하게 되는데 vercel은 두가지 키를 추가로 필요로 함
+// NEXTAUTH_URL는 배포할 url, NEXTAUTH_SECRET는 아래 secret에 써 놓은 키
+// openssl rand -base64 32 를 사용해 깃배쉬에서 키를 만들고 그걸 적으면 됨
 export const authOptions = NextAuth({
   providers: [
     NaverProvider({
