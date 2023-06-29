@@ -48,7 +48,7 @@ export default function Post({id,page,postingContent}) {
         </div>
         <div className={classes.content}>
           <div className={classes.title}>
-            <div className={classes.category}>{tag2 === "music" ? '음원' : '라이브'}</div>
+            {tag2 === "music" ? <div className={`${classes.category} ${classes.music}`}>음원</div> : <div className={`${classes.category} ${classes.live}`}>라이브</div>}
             <p>{title}</p>
           </div>
           <div className={classes.detail}>

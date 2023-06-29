@@ -21,15 +21,32 @@
   align-items:top;
   margin-bottom:8px;
 }
-.category {
-  background:var(--light_g);
-  padding:3px 8px;
+.writer {
   font-size:14px;
+}
+.date {
+  color:rgb(126, 126, 126);
+  font-size:14px;
+}
+.view {
+  color:rgb(51, 51, 51);
+  font-size:14px;
+}
+.category {
+  padding:2px 8px;
+  font-size:12px;
   border-radius:5px;
   margin-right:7px;
 }
+.music {
+  border:1px solid #19cb01;
+}
+.live {
+  border:1px solid #8b80f0;
+}
 .detail {
   display:flex;
+  align-items:end;
   padding:0 5px;
 }
 .detail div {
