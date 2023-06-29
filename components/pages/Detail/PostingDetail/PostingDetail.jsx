@@ -35,10 +35,11 @@ export default function PostingDetail({postingData,removePosting}) {
         <div className={classes.writer}>{postingData.username}</div>
         <div className={classes.date}>06/21</div>
         <div className={classes.view}>조회수 {postingData.viewcnt}</div>
+        <div className={classes.delete} onClick={removePosting}>
+          <p>게시물 삭제</p>
+        </div>        
       </div>
-      <div className={classes.delete} onClick={removePosting}>
-        <p>게시물 삭제</p>
-      </div>
+
     </div>
   )
 }

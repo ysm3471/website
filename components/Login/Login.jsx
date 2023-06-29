@@ -12,12 +12,12 @@ export default function Login() {
       <>
         <p> {session.user.email}</p>
         <div onClick={() => signOut('naver')}>
-          Sign Out
+          로그아웃
         </div>
       </>
     ) : (
       <div onClick={() => signIn('naver')}>
-        Sign In
+        Naver 로그인
       </div>
     )}
   </div>

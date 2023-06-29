@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 .SmallHeader {
   margin-top:30px;
+  margin-bottom:10px;
 }
 .SmallHeader h1 {
   font-weight:400;
   font-size:40px;
   text-align:left;
+  font-family: 'Oswald', sans-serif;
+  margin-left:5px;
 }

@@ -5,5 +5,10 @@
 }
 .Login div {
   margin-left:15px;
+  font-weight:600;
   cursor: pointer;
+  background:#19cb01;
+  color:#fff;
+  padding:10px 15px;
+  border-radius:10px;
 }

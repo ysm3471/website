@@ -28,7 +28,7 @@ export default function HomePost() {
   if (on) {   // 준비가 되면 postingList 생성
     postingList = Object.keys(postingData.current).reverse().map((key, index) => {   // 최신 게시물부터 보여주기 위해서 역순으로 배열 생성
       const postingContent = postingData.current[key]
-      return <Post key={key} id={key} postingContent={postingContent} />
+      return <Post key={key} id={key} page='all'  postingContent={postingContent} />
     })
   }
   return (

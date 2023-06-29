@@ -5,7 +5,7 @@ import Nav from '../Nav';
 export default function HomeHeader() {
   return (
     <div className={classes.Header}>
-      <h1>대문</h1>
+      <h1>Crash</h1>
       <Nav />
     </div>
   )
