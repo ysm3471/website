@@ -19,26 +19,31 @@ export default function UploadBox() {
 
   const router = useRouter();
   
-  useEffect(() => {   // 글쓰기 도중 로그아웃이 될 경우
+/*   useEffect(() => {   // 글쓰기 도중 로그아웃이 될 경우
     if(status === "unauthenticated") {
       alert("로그인 후에 글을 작성할 수 있습니다");
       router.back();
     }
-  },[])
+  },[]) */
 
   function handleSubmit(e) {
     e.preventDefault();
-    const userName = session.user.email.split('@') // 아이디에서 이메일부분을 잘라서 저장
-    const today = new Date();
-    const time = today.getTime();   // 작성 기준 시간정보를 초단위로 저장
+    if (status === "authenticated") {
+      const userName = session.user.email.split('@') // 아이디에서 이메일부분을 잘라서 저장
+      const today = new Date();
+      const time = today.getTime();   // 작성 기준 시간정보를 초단위로 저장
 
-    if(title && value) {
-      writeUserData(userName[0],tag1,tag2,title,album,value,tag,thumbnail,time)
-      router.back();      
+      if(title && value) {
+        writeUserData(userName[0],tag1,tag2,title,album,value,tag,thumbnail,time)
+        router.back();      
+      }
+      else {
+        alert('제목과 내용을 입력해주세요')   // 제목과 내용은 필수
+      }
     }
-    else {
-      alert('제목과 내용을 입력해주세요')   // 제목과 내용은 필수
-    }
+  else {
+    alert('로그인 후에 글을 작성할 수 있습니다.\n(현재 테스트 버전이기 때문에 회원가입은 불가능합니다)')
+  }
   }
 
 return (
