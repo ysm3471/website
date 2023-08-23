@@ -63,7 +63,6 @@ export default function TextEditor({setThumbnail,inputRef }) {
 
   function textChange(e) {
     inputRef.current = e;
-    console.log(inputRef.current);
     setValue(inputRef.current)
   }
 
