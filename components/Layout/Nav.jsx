@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+import React, { memo } from 'react';
 import classes from './Nav.module.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,7 +12,7 @@ const menu = [
   {id:'menu04',name:'아시아',path:'/asia'}
 ]
 
-export default function Nav() {
+function Nav() {
   const pathName = usePathname();
 
   const menus = menu.map((aa) => {    // 누르면 active 클라스를 추가하는 함수
@@ -33,3 +33,5 @@ export default function Nav() {
     </div>
   )
 }
+
+export default memo(Nav);

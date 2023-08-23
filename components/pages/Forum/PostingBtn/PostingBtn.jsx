@@ -1,11 +1,11 @@
 "use client"
 
-import React from 'react';
+import React, { memo } from 'react';
 import classes from './PostingBtn.module.css';
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from 'next/navigation';
 
-export default function PostingBtn() {
+function PostingBtn() {
   const { status } = useSession();    // 현재 로그인 상태를 가져옴
   const router = useRouter();
   const pathName = usePathname();
@@ -24,3 +24,5 @@ export default function PostingBtn() {
     </div>
   )
 }
+
+export default memo(PostingBtn);

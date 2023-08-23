@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import classes from './UploadBox.module.css'
 import TextEditor from './TextEditor';  // react-quill을 사용한 text-editor
 import writeUserData from '@/Firebase/Write/writeUserData';
@@ -13,9 +13,10 @@ export default function UploadBox() {
   const [tag2,setTag2] = useState('music');
   const [title,setTitle] = useState('');
   const [album,setAlbum] = useState('');
-  const [value,setValue] = useState('');
   const [tag,setTag] = useState('');
   const [thumbnail,setThumbnail] = useState('');
+
+  const inputRef = useRef(null);
 
   const router = useRouter();
   
@@ -33,8 +34,8 @@ export default function UploadBox() {
       const today = new Date();
       const time = today.getTime();   // 작성 기준 시간정보를 초단위로 저장
 
-      if(title && value) {
-        writeUserData(userName[0],tag1,tag2,title,album,value,tag,thumbnail,time)
+      if(title && inputRef.current) {
+        writeUserData(userName[0],tag1,tag2,title,album,inputRef.current,tag,thumbnail,time)
         router.back();      
       }
       else {
@@ -63,7 +64,7 @@ return (
       <input type="text" className={classes.name} placeholder="제목" value={title} onChange={(e) => setTitle(e.target.value)} />
       <input type="text" className={classes.album} placeholder="앨범명(선택)" value={album} onChange={(e) => setAlbum(e.target.value)} />
     </div>
-    <TextEditor value={value} setValue={setValue} setThumbnail={setThumbnail} />
+    <TextEditor setThumbnail={setThumbnail} inputRef={inputRef} />
     <div className={classes.tag}>
       <input type="text" placeholder='#태그(선택)' value={tag} onChange={(e) => setTag(e.target.value)} />
     </div>

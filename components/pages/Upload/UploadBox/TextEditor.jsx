@@ -1,6 +1,6 @@
 "use client" // next js에서 client 컴포넌트임을 명시
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css'
 
@@ -25,8 +25,9 @@ const modules = {
   ]
 }
 
-export default function TextEditor({ value, setValue, setThumbnail }) {
+export default function TextEditor({setThumbnail,inputRef }) {
   let text = useRef('');    // youtube url을 저장하는 변수
+  const [value,setValue] = useState("")
 
   if (typeof window === 'object') {
     window.addEventListener('paste', (e) => {   // 붙여넣기를 하면 text에 정보를 저장
@@ -50,9 +51,9 @@ export default function TextEditor({ value, setValue, setThumbnail }) {
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       >
     </iframe>`
-      let copy = value
+      let copy = inputRef.current
       if (copy !== "") {    // 맨 처음 작성 시 value값이 공백으로 인식될 때를 위한 코드
-        copy = value.replace(text.current, iframeUrl)
+        copy = inputRef.current.replace(text.current, iframeUrl)
         setValue(copy)
       }
       else setValue(iframeUrl)  // 주소 변환한 값으로 작성글에 저장
@@ -60,8 +61,14 @@ export default function TextEditor({ value, setValue, setThumbnail }) {
     text.current = '' // 붙여넣기한 값을 저장한 변수 초기화
   }, [text.current])
 
+  function textChange(e) {
+    inputRef.current = e;
+    console.log(inputRef.current);
+    setValue(inputRef.current)
+  }
+
   return (
-      <QuillNoSSRWrapper modules={modules} value={value} onChange={setValue} theme="snow" />
+      <QuillNoSSRWrapper modules={modules} value={value} onChange={textChange} theme="snow" />
   )
 
 }

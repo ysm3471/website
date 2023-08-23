@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import classes from './Search.module.css'
 import { usePathname, useRouter} from 'next/navigation';
 
-export default function Search() {
+function Search() {
   const [value,setValue] = useState("");
   const [category,setCategory] = useState("title");
   const router = useRouter();
@@ -36,3 +36,5 @@ export default function Search() {
     </div >
   )
 }
+
+export default memo(Search);

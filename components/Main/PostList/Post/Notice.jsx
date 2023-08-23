@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classes from './Notice.module.css'
 import { useRouter } from 'next/navigation';
 
-export default function Notice() {
+function Notice() {
   const router = useRouter();
 
   function movePage() {
@@ -17,3 +17,5 @@ export default function Notice() {
     </div>
   )
 }
+
+export default memo(Notice);
